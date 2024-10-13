@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const axios = require('axios');
 require('dotenv').config();
 const app = express();
-const apiKey = "Enter API Key";  // Replace with your actual OpenAI API key
+const apiKey = AIzaSyCBqHB-LydVsiJUNpZLnS6YybkykHqUWEQ;  // Replace with your actual OpenAI API key
 const cors = require('cors');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

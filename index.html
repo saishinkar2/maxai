@@ -44,7 +44,35 @@
       </div>
   </div>
 
-
+  <script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('chat-form');
+      const userInput = document.getElementById('user-input');
+      const messagesContainer = document.getElementById('messages');
+  
+      form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from refreshing the page
+  
+        // Get the message the user typed
+        const message = userInput.value;
+  
+        // Create a new div element for the message
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('my-2', 'p-2', 'rounded', 'bg-primary', 'text-white');
+        messageDiv.innerText = message;
+  
+        // Append the message to the chat container
+        messagesContainer.appendChild(messageDiv);
+  
+        // Scroll to the bottom of the chat container to see the latest message
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  
+        // Clear the input field
+        userInput.value = '';
+      });
+    });
+  </script>
   
       
       <script  type="module" src="env.js"></script>
