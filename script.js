@@ -1,6 +1,6 @@
 document.getElementById('chat-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const apiKey = 'AIzaSyDOpOFfsBVxsHqGDQZGdO0efDlHcPgfmNA'; 
+    const apiKey = 'AIzaSyDOpOFfsBVxsHqGDQZGdO0efDlHcPgfmNA';
     const input = document.getElementById('user-input');
     const message = input.value.trim();
     if (!message) return;
@@ -9,34 +9,40 @@ document.getElementById('chat-form').addEventListener('submit', async (e) => {
     input.value = ''; // Clear input field after sending message
 
     const data = {
-        "prompt": {
-            "text": message
-        }
-    };
+        "contents": [
+            {
+                "parts": [
+                    {
+                        "text": message
+                    }
+                ]
+            }
+        ]
+    }
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta2/models/gemini-1.5:generateText?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         });
-    
+
         if (!response.ok) {
             const errorDetails = await response.json();
             throw new Error(`HTTP error! status: ${response.status}, details: ${JSON.stringify(errorDetails)}`);
         }
-    
+
         const result = await response.json();
-        const botReply = result.candidates?.[0]?.output || "Sorry, I don't have a response.";
+        const botReply = result.candidates[0]?.content?.parts[0]?.text || "Sorry, I don't have a response.";
         addMessage('Bot', botReply);
-    
+
     } catch (error) {
         console.error('Error making API request:', error.message);
         addMessage('Bot', `Error processing your request: ${error.message}`);
     }
-    
+
 });
 
 function addMessage(sender, message) {
