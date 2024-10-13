@@ -7,7 +7,7 @@ require('dotenv').config();
 const path = require("path")
 const app = express();
 const apiKey = process.env.APIKEY
-console.log(apiKey)  // Replace with your actual OpenAI API key
+console.log(AIzaSyDOpOFfsBVxsHqGDQZGdO0efDlHcPgfmNA)  // Replace with your actual OpenAI API key
 const cors = require('cors');
 app.use(express.static(path.join(__dirname, '/../')));
 app.use(bodyParser.urlencoded({ extended: false }));
