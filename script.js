@@ -1,9 +1,6 @@
-
-import secretPhrase from "./env.js"
-
 document.getElementById('chat-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const apiKey = secretPhrase();
+    const apiKey = AIzaSyDOpOFfsBVxsHqGDQZGdO0efDlHcPgfmNA;
     console.log("Test")
 
     const input = document.getElementById('user-input');
