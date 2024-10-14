@@ -1,5 +1,6 @@
 
 $(function () {
+  setTimeout(() => {
   $("#hm-nav").load("header.html", function (response, status, request) {
     
     switch (page) {
@@ -19,4 +20,5 @@ $(function () {
     
 
   });
+  },300)
 });
