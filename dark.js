@@ -10,7 +10,6 @@ $(function () {
       case "aichat":
         $(".nav-link").removeClass("active");
         $(".hm-aichat").addClass("active bulu");
-
         break;
         case "about":
         $(".nav-link").removeClass("active");
