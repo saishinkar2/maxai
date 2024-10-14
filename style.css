@@ -1,0 +1,150 @@
+.form-switch .form-check-input{
+    position:absolute;
+    right:20px;
+}
+.custom-control-label{
+    position:absolute;
+    right:60px;
+}
+table{
+    padding: 100px;
+}
+    body {
+      margin: 0;
+      padding: 0;
+    }
+[data-theme="dark"]{
+    background-color: #111 !important;
+    color: #ffffff !important; 
+  }
+.btn-primary
+h1 {
+    color: #ffec33;
+  text-align: center;
+}
+
+.intro {
+    background-color: #ffec33;
+    padding: 50px 0;
+}
+.intro h2 {
+    font-weight: 700;
+}
+.services {
+    padding: 50px 0;
+}
+.card {
+    background: inherit;
+    color: inherit;
+    margin-bottom: 20px;
+    border: none;
+}
+.card-body {
+    text-align: center;
+}
+.card-title {
+    font-weight: 700;
+}
+
+.bulu:not(.dropdown-item){
+background: #ffec33;
+border-radius:10px;
+}
+a.nav-link.active{
+    text-align: center;
+}
+
+label {
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#calculateButton {
+    background-color: #ffec33;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+}
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+
+
+
+tr:nth-child(even) {
+background-color: #FFF;
+}
+tr:nth-child(odd){
+    background: lightgrey;
+}
+
+
+@keyframes scrollText {
+0% {
+transform: translateY(-100%);
+}
+100% {
+transform: translateY(0);
+}
+
+}
+
+input[type="number"] {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffec33;
+
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+a.bt{
+    background-color: #ffec33;
+ 
+}
+
+
+.button {
+    background-color:#ffec33;
+    color: #fff;
+}
+
+.link {
+    color: #1abc9c;
+}
+
+/* Borders and Dividers */
+.divider {
+    border-top: 1px solid #555;
+}
+
+/* Hover Effects */
+.button:hover {
+    background-color: #ffec33;
+}
+
+.link:hover {
+    color: #ffec33;
+}
+
+/* Typography */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
