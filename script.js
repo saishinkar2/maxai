@@ -2,11 +2,13 @@ document.getElementById('chat-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const apiKey = 'AIzaSyDOpOFfsBVxsHqGDQZGdO0efDlHcPgfmNA';
     const input = document.getElementById('user-input');
+    const submitButton = document.querySelector('button[type="submit"]'); // Assuming you have a submit button
     const message = input.value.trim();
     if (!message) return;
 
     addMessage('User', message);
     input.value = ''; // Clear input field after sending message
+    submitButton.disabled = true; // Disable the button to prevent another submit
 
     const data = {
         "contents": [
@@ -41,8 +43,9 @@ document.getElementById('chat-form').addEventListener('submit', async (e) => {
     } catch (error) {
         console.error('Error making API request:', error.message);
         addMessage('Bot', `Error processing your request: ${error.message}`);
+    } finally {
+        submitButton.disabled = false; // Re-enable the submit button once the request is complete
     }
-
 });
 
 function addMessage(sender, message) {
@@ -52,7 +55,8 @@ function addMessage(sender, message) {
     var converter = new showdown.Converter();
     var htmlMessage = converter.makeHtml(message); // Markdown to HTML conversion
 
-    div.classList.add('chat-message', 'p-2', 'mb-2', 'rounded', sender === 'User' ? 'bg-light' : 'bg-warning');
+    div.classList.add( 'p-2', 'mb-2', 'rounded', sender === 'User' ? 'bg-light' : 'chatmsg');
+
     div.innerHTML = `<strong>${sender}:</strong> ${htmlMessage}`;
 
     messages.appendChild(div);
